@@ -3,7 +3,9 @@ const express = require("express");
 const hbs = require("hbs");
 const geocoding = require("./utils/geocode");
 const forecast = require("./utils/forcast");
+
 const app = express();
+const port = process.env.PORT || 5000;
 
 //console.log(__dirname);
 //console.log(path.join(__dirname, "../public"));
@@ -65,6 +67,6 @@ app.get("*", (req, res) => {
   res.render("error", { msg: "page not found", error: "404" });
 });
 
-app.listen(5000, () => {
-  console.log("listening to port 5000");
+app.listen(port, () => {
+  console.log("listening to port " + port);
 });

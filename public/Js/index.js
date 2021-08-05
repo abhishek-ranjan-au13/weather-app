@@ -8,18 +8,16 @@ weatherForm.addEventListener("submit", (e) => {
   message1.textContent = "loading...."; //before fetch and inside event listener cause need to show after submission
   message2.textContent = "";
 
-  fetch("http://localhost:5000/weather?address=" + location).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.error) {
-          //console.log(data.error);
-          message1.textContent = data.error;
-        } else {
-          message1.textContent = data.location;
-          message2.textContent = data.Forcast;
-        }
-      });
-    }
-  );
+  fetch("/weather?address=" + location).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        //console.log(data.error);
+        message1.textContent = data.error;
+      } else {
+        message1.textContent = data.location;
+        message2.textContent = data.Forcast;
+      }
+    });
+  });
   console.log(location);
 });
