@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" href="/img/weather.png" />
+    {{!-- <script src="/Js/index.js"></script>   script cant be here cause then we would be running before everything below is even parsed and thus wont be able to listen to the events   --}}
+  </head>
+  <body>
+    <div class = 'main-content'>
+      {{>header}}
+      <p>This Site Is For Weather Information! </p>
+      <form>
+        <input placeholder="Location">
+        <button>Search</button>
+        <p id ='message1'></p>
+        <p id='message2'></p>
+      </form>
+    </div>
+    
+     {{>footer}} 
+     <script src="/Js/index.js"></script> 
+  </body>
+</html>
